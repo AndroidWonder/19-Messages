@@ -5,6 +5,7 @@
  */
 package com.course.example.messages;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +22,7 @@ public class Messages extends Activity {
 	private TextView msgWorking;
 
 	//Create Handler object to handle messages placed on queue 
+	@SuppressLint("HandlerLeak")
 	Handler handler = new Handler() {
 		
 		public void handleMessage(Message msg) {
@@ -32,8 +34,8 @@ public class Messages extends Activity {
 				bar2.setVisibility(View.INVISIBLE);
 			}
 			else {
-				msgWorking.setText("Working..." +
-						bar.getProgress() +"%" );
+				String text = "Working..." + bar.getProgress() + "%";
+				msgWorking.setText(text);
 			}
 			//write message contents to log
 			Log.i("Message", (String)msg.obj + " " + msg.what);
