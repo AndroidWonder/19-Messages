@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.course.example.messages"
         minSdkVersion 17
-        targetSdkVersion 28
+        targetSdkVersion 28 
 
 
     }

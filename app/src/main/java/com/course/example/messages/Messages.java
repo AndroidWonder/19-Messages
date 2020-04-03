@@ -26,6 +26,7 @@ public class Messages extends Activity {
 	Handler handler = new Handler() {
 		
 		public void handleMessage(Message msg) {
+
 			bar.incrementProgressBy(5);
 			
 			if (bar.getProgress() == bar.getMax()){
