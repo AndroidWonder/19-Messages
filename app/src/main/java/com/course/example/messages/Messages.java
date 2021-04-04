@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -21,9 +22,9 @@ public class Messages extends Activity {
 	private ProgressBar bar2;
 	private TextView msgWorking;
 
-	//Create Handler object to handle messages placed on queue 
-	@SuppressLint("HandlerLeak")
-	Handler handler = new Handler() {
+
+	//Create Handler object to handle messages placed on queue
+	Handler handler = new Handler(Looper.getMainLooper()) {
 		
 		public void handleMessage(Message msg) {
 
