@@ -17,7 +17,7 @@ android {
         }
     }
 
-    namespace 'com.course.example'
+    namespace 'com.course.example.messages'
 }
 
 
